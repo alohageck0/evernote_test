@@ -6,7 +6,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <allure.version>{latest-allure-version}</allure.version>
+        <allure.version>1.4.16</allure.version>
         <aspectj.version>1.8.5</aspectj.version>
     </properties>
 
