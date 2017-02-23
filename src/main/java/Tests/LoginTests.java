@@ -32,11 +32,10 @@ public class LoginTests extends TestTemplate {
       logger.info("overriden teardown method");
    }
 
-   @Test(groups = {"login", "smoke"}, dataProvider = "usernames", dataProviderClass = MySQLDataProviders.class)
+   @Test(groups = {"login", "smoke"}, dataProvider = "usernames", dataProviderClass = MySQLDataProviders.class, dependsOnMethods = {"clickSignIn"})
 //   @Test(groups = {"login", "smoke"})
    public void login(String username, String password) {
       logger.info("login test case started");
-      getWebDriver().manage().window().maximize();
       getWebDriver().navigate().to("https://evernote.com/");
       logger.info("Home page opened");
 
@@ -59,8 +58,20 @@ public class LoginTests extends TestTemplate {
       Userpage userpage = new Userpage(getWebDriver());
       Assert.assertEquals(userpage.getNotesTitle().getText(), "NOTES");
 
-
    }
 
+   @Test(groups = {"login", "smoke"})
+   public void clickSignIn() {
+      logger.info("clickSignIn test case started");
+      getWebDriver().navigate().to("https://evernote.com/");
+      logger.info("Home page opened");
+
+      HomePage homePage = new HomePage(getWebDriver());
+      homePage.getSignIn().click();
+      logger.info("Sign in clicked");
+
+      Assert.assertEquals(homePage.getSignInPopupTitle().getText(), "Sign in");
+      logger.info("Sign in pop up opened");
+   }
 
 }

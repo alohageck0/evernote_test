@@ -61,6 +61,8 @@ public class TestTemplate {
         properties.load(new BufferedInputStream(new FileInputStream(homedir + "/Automation/grid.properties")));
         logger.info("Selenium grid server address: " + properties.getProperty("serveraddress"));
         this.webDriver = new RemoteWebDriver(new URL(properties.getProperty("serveraddress")), config.getFirefoxCapabilities());
+        getWebDriver().manage().window().maximize();
+
     }
 
     @AfterMethod(alwaysRun = true)
