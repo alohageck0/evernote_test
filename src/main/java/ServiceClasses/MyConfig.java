@@ -20,8 +20,8 @@ public final class MyConfig {
       String database = "Usernames";
       Properties p = new Properties();
 
-      p.setProperty("user", "root");
-      p.setProperty("password", "lf(CydWo#0)!@@s");
+      p.setProperty("user", "evgenii");
+      p.setProperty("password", "qolsys123");
       p.setProperty("verifyServerCertificate", "false");
       p.setProperty("useSSL", "false");
       p.setProperty("serverTimezone", "UTC");

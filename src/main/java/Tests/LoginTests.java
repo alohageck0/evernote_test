@@ -1,7 +1,10 @@
 package Tests;
 
+import Data.MySQLDataProviders;
 import ServiceClasses.TestTemplate;
+import objectRepo.HomePage;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -22,18 +25,36 @@ public class LoginTests extends TestTemplate {
    public LoginTests() {
    }
 
-//   @AfterMethod(alwaysRun = true)
+   //   @AfterMethod(alwaysRun = true)
    @Override
    public void tearDown(Method test) throws IOException {
       logger.info("overriden teardown method");
    }
 
-//   @Test(groups = {"login", "smoke"}, dataProvider = "usernames", dataProviderClass = MySQLDataProviders.class)
-   @Test(groups = {"login", "smoke"})
-   public void login() {
+   @Test(groups = {"login", "smoke"}, dataProvider = "usernames", dataProviderClass = MySQLDataProviders.class)
+//   @Test(groups = {"login", "smoke"})
+   public void login(String username, String password) {
       logger.info("login test case started");
       getWebDriver().navigate().to("https://evernote.com/");
       logger.info("Home page opened");
+
+      HomePage homePage = new HomePage(getWebDriver());
+      homePage.getSignIn().click();
+      logger.info("Sign in clicked");
+
+      Assert.assertEquals(homePage.getSignInPopupTitle().getText(), "Sign in");
+      logger.info("Sign in pop up opened");
+
+      homePage.getUsernameTextfield().sendKeys(username);
+      logger.info("Username " + username + " enetered");
+
+      homePage.getPasswordTextfield().sendKeys(password);
+      logger.info("Password entered");
+
+      homePage.getSignInButton().click();
+      logger.info("Sign in button clicked");
+
+
    }
 
 
