@@ -1,6 +1,6 @@
-package Data;
+package data;
 
-import ServiceClasses.MyConfig;
+import serviceClasses.MyConfig;
 import org.testng.annotations.DataProvider;
 
 import java.sql.*;

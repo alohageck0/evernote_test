@@ -1,7 +1,7 @@
-package Tests;
+package tests;
 
-import Data.MySQLDataProviders;
-import ServiceClasses.TestTemplate;
+import data.MySQLDataProviders;
+import serviceClasses.TestTemplate;
 import objectRepo.HomePage;
 import objectRepo.Userpage;
 import org.openqa.selenium.remote.RemoteWebDriver;

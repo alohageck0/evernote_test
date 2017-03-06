@@ -1,4 +1,4 @@
-package ServiceClasses;
+package serviceClasses;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
