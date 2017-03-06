@@ -1,4 +1,4 @@
-package data;
+package Data;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -17,6 +17,9 @@ public class MyXLSDataProviders {
    private static XSSFRow row = null;
    private static XSSFCell cell = null;
 
+   /**
+    * Method to get usernames Data from xls file.
+    */
    @DataProvider
    public static Object[][] addUserData() throws IOException {
       return getData("usernames");

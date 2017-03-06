@@ -1,4 +1,4 @@
-package serviceClasses;
+package ServiceClasses;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,6 +19,9 @@ public class Utils {
         return result;
     }
 
+    /**
+     * Method to run process from command line.
+     */
     public static List<String> runProcess(boolean isWin, String... command) {
         System.out.print("command to run: ");
         for (String s : command) {

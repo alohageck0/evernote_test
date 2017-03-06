@@ -1,4 +1,4 @@
-package serviceClasses;
+package ServiceClasses;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 

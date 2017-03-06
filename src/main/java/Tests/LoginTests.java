@@ -1,7 +1,7 @@
-package tests;
+package Tests;
 
-import data.MySQLDataProviders;
-import serviceClasses.TestTemplate;
+import Data.MySQLDataProviders;
+import ServiceClasses.TestTemplate;
 import objectRepo.HomePage;
 import objectRepo.Userpage;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -32,6 +32,11 @@ public class LoginTests extends TestTemplate {
       logger.info("overriden teardown method");
    }
 
+   /**
+    * Login test case
+    * @param username
+    * @param password
+     */
    @Test(groups = {"login", "smoke"}, dataProvider = "usernames", dataProviderClass = MySQLDataProviders.class, dependsOnMethods = {"clickSignIn"})
 //   @Test(groups = {"login", "smoke"})
    public void login(String username, String password) {

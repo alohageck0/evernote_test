@@ -1,12 +1,12 @@
-package data;
+package Data;
 
-import serviceClasses.MyConfig;
+import ServiceClasses.MyConfig;
 import org.testng.annotations.DataProvider;
 
 import java.sql.*;
 
 /**
- * MySQLDataProviders defines data providers for TestNG tests.
+ * MySQLDataProviders defines Data providers for TestNG Tests.
  *
  * @author Evgenii Iavorovich evgenii.iavorovich@qolsys.com
  */
@@ -15,7 +15,7 @@ public class MySQLDataProviders {
 
 
    /**
-    * Method to get usernames data from database.
+    * Method to get usernames Data from database.
     * Returns two-dimensions array, each subarray contains node_port, adb_panel_id, adc_customer_id, adc_user_login, adc_user_password
     */
    @DataProvider
